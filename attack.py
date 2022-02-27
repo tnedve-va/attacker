@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import cloudscraper
 import requests
-import urllib3.exceptions
 from bs4 import BeautifulSoup
 from urllib.parse import unquote
 from gc import collect
@@ -11,7 +10,6 @@ from requests import get
 from sys import stderr
 from threading import Thread
 from threading import active_count
-
 from random import choice
 from time import sleep
 from urllib3 import disable_warnings
@@ -95,5 +93,4 @@ def cleaner():
 if __name__ == '__main__':
     for _ in range(threads):
         Thread(target=mainth).start()
-
     Thread(target=cleaner, daemon=True).start()
